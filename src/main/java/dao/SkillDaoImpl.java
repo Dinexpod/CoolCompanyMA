@@ -16,7 +16,7 @@ public class SkillDaoImpl extends AbstractDao implements SkillDao {
     }
 
     @Override
-    public void updateSkillById(Long id) {
+    public void updateSkillById(Skill skill) {
 
     }
 

@@ -7,7 +7,7 @@ import java.util.Set;
 public interface CustomerDao {
     void addCustomer(Customer customer);
 
-    void updateCustomerById(Long id);
+    void updateCustomerById(Customer customer);
 
     void deleteCustomerById(Long id);
 

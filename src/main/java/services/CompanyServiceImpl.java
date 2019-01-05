@@ -18,8 +18,8 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public void updateCompanyById(Long id) {
-        this.companyDao.updateCompanyById(id);
+    public void updateCompanyById(Company company) {
+        this.companyDao.updateCompanyById(company);
     }
 
     @Override

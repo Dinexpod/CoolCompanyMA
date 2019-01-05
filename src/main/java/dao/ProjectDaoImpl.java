@@ -16,7 +16,7 @@ public class ProjectDaoImpl extends AbstractDao implements ProjectDao {
     }
 
     @Override
-    public void updateProjectById(Long id) {
+    public void updateProjectById(Project project) {
 
     }
 

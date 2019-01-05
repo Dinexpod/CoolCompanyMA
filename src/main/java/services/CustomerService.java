@@ -7,7 +7,7 @@ import java.util.Set;
 public interface CustomerService {
     void addCustomer(Customer customer);
 
-    void updateCustomerById(Long id);
+    void updateCustomerById(Customer customer);
 
     void deleteCustomerById(Long id);
 

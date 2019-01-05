@@ -18,8 +18,8 @@ public class SkillServiceImpl implements SkillService {
     }
 
     @Override
-    public void updateSkillById(Long id) {
-        this.skillDao.updateSkillById(id);
+    public void updateSkillById(Skill skill) {
+        this.skillDao.updateSkillById(skill);
     }
 
     @Override

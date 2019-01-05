@@ -7,7 +7,7 @@ import java.util.Set;
 public interface DeveloperDao {
     void addDeveloper(Developer developer);
 
-    void updateDeveloperById(Long id);
+    void updateDeveloperById(Developer developer);
 
     void deleteDeveloperById(Long id);
 
