@@ -2,7 +2,7 @@ package dao;
 
 import models.Developer;
 
-import java.util.Set;
+import java.util.List;
 
 public interface DeveloperDao {
     void addDeveloper(Developer developer);
@@ -13,5 +13,5 @@ public interface DeveloperDao {
 
     Developer getDeveloperById(Long id);
 
-    Set<Developer> showAllDevelopers();
+    List<Developer> showAllDevelopers();
 }

@@ -21,6 +21,11 @@ public class Company {
         this.type = type;
     }
 
+    public enum Type {
+        INSOURCE,
+        OUTSOURCE
+    }
+
     public long getId() {
         return id;
     }

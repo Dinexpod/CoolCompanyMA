@@ -2,6 +2,7 @@ package dao;
 
 import models.Company;
 
+import java.util.List;
 import java.util.Set;
 
 public interface CompanyDao {
@@ -13,5 +14,5 @@ public interface CompanyDao {
 
     Company getCompanyById(Long id);
 
-    Set<Company> showAllCompany();
+    List<Company> showAllCompany();
 }

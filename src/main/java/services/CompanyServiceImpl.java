@@ -3,6 +3,7 @@ package services;
 import dao.CompanyDao;
 import models.Company;
 
+import java.util.List;
 import java.util.Set;
 
 public class CompanyServiceImpl implements CompanyService {
@@ -33,7 +34,7 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public Set<Company> showAllCompany() {
+    public List<Company> showAllCompany() {
         return this.companyDao.showAllCompany();
     }
 }
