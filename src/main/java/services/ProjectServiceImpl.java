@@ -3,6 +3,7 @@ package services;
 import dao.ProjectDao;
 import models.Project;
 
+import java.util.List;
 import java.util.Set;
 
 public class ProjectServiceImpl implements ProjectService {
@@ -33,7 +34,7 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public Set<Project> showAllProjects() {
+    public List<Project> showAllProjects() {
         return this.projectDao.showAllProjects();
     }
 }

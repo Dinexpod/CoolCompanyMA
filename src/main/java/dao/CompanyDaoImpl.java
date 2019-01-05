@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class CompanyDaoImpl extends AbstractDao implements CompanyDao {
     public CompanyDaoImpl(Connection connection) {
@@ -23,7 +22,7 @@ public class CompanyDaoImpl extends AbstractDao implements CompanyDao {
         try {
             PreparedStatement statement = connection.prepareStatement(INSERT);
             statement.setString(1, company.getName());
-            statement.setString(2, company.getType());
+            statement.setString(2, company.getType().name());
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -38,7 +37,7 @@ public class CompanyDaoImpl extends AbstractDao implements CompanyDao {
         try {
             PreparedStatement statement = connection.prepareStatement(UPDATE);
             statement.setString(1, company.getName());
-            statement.setString(2, company.getType());
+            statement.setString(2, company.getType().name());
             statement.setLong(3, company.getId());
             statement.execute();
         } catch (SQLException e) {
@@ -83,7 +82,8 @@ public class CompanyDaoImpl extends AbstractDao implements CompanyDao {
         Company company = new Company();
         company.setId(rs.getLong("company_id"));
         company.setName(rs.getString("name"));
-        company.setType(rs.getString("type"));
+        //        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        Company.Type.valueOf(rs.getString("type"));
 
         return company;
     }

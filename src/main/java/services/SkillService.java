@@ -2,6 +2,7 @@ package services;
 
 import models.Skill;
 
+import java.util.List;
 import java.util.Set;
 
 public interface SkillService {
@@ -13,5 +14,5 @@ public interface SkillService {
 
     Skill getSkillById(Long id);
 
-    Set<Skill> showAllSkills();
+    List<Skill> showAllSkills();
 }

@@ -6,7 +6,7 @@ import java.util.Set;
 public class Company {
     private Long id;
     private String name;
-    private String type;
+    private Type type;
     private Set<Project> projects;
 
     public void addProject(Project project) {
@@ -16,7 +16,7 @@ public class Company {
     public Company() {
     }
 
-    public Company(String name, String type) {
+    public Company(String name, Type type) {
         this.name = name;
         this.type = type;
     }
@@ -42,11 +42,11 @@ public class Company {
         this.name = name;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
     }
 

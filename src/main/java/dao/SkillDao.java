@@ -2,6 +2,7 @@ package dao;
 
 import models.Skill;
 
+import java.util.List;
 import java.util.Set;
 
 public interface SkillDao {
@@ -13,5 +14,5 @@ public interface SkillDao {
 
     Skill getSkillById(Long id);
 
-    Set<Skill> showAllSkills();
+    List<Skill> showAllSkills();
 }

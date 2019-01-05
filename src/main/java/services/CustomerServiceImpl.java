@@ -3,6 +3,7 @@ package services;
 import dao.CustomerDao;
 import models.Customer;
 
+import java.util.List;
 import java.util.Set;
 
 public class CustomerServiceImpl implements CustomerService {
@@ -33,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Set<Customer> showAllCustomer() {
+    public List<Customer> showAllCustomer() {
         return this.customerDao.showAllCustomer();
     }
 }
