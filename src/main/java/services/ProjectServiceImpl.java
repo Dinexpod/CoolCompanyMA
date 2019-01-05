@@ -1,11 +1,9 @@
 package services;
 
 import dao.ProjectDao;
-import models.Developer;
 import models.Project;
 
 import java.util.List;
-import java.util.Set;
 
 public class ProjectServiceImpl implements ProjectService {
     private final ProjectDao projectDao;
@@ -47,5 +45,10 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public void getAllDevelopersFromProject(Project project) {
         this.projectDao.getAllDevelopersFromProject(project);
+    }
+
+    @Override
+    public int showSomeDevs() {
+        return this.projectDao.showSomeDevs();
     }
 }

@@ -1,6 +1,5 @@
 package dao;
 
-import models.Company;
 import models.Developer;
 import models.Skill;
 
@@ -18,4 +17,6 @@ public interface DeveloperDao {
     List<Developer> showAllDevelopers();
 
     void getAllDevelopersBySkillName(Skill skill);
+
+    void getAllDevelopersBySkillDegree(Skill skill);
 }

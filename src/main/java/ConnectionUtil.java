@@ -15,8 +15,8 @@ public class ConnectionUtil {
 
             connection = DriverManager
                     .getConnection("jdbc:mysql://localhost:3306/coolcompany?serverTimezone=UTC",
-                                   "root",
-                                   "root");
+                            "root",
+                            "root");
         } catch (ClassNotFoundException e) {
             System.out.println("Problems with JDBC DRIVERS");
             e.printStackTrace();

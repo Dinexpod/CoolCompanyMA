@@ -1,6 +1,5 @@
 package services;
 
-import models.Company;
 import models.Developer;
 import models.Skill;
 
@@ -19,4 +18,5 @@ public interface DeveloperService {
 
     void getAllDevelopersBySkillName(Skill skill);
 
+    void getAllDevelopersBySkillDegree(Skill skill);
 }

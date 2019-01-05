@@ -1,5 +1,8 @@
 package models;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Set;
 
 public class Project {
@@ -8,18 +11,21 @@ public class Project {
     private String type;
     private double cost;
     private Set<Developer> developers;
+    private Date date;
 
     public void addDeveloper(Developer developer) {
         developers.add(developer);
     }
 
     public Project() {
+        this.date = new Date();
     }
 
     public Project(String name, String type, double cost) {
         this.name = name;
         this.type = type;
         this.cost = cost;
+        this.date = new Date();
     }
 
     public long getId() {
@@ -54,6 +60,12 @@ public class Project {
         this.cost = cost;
     }
 
+    public String toStringDate() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        return
+                "date=" + dateFormat.format(date);
+    }
+
     @Override
     public String toString() {
         return "Project{" +
@@ -62,6 +74,7 @@ public class Project {
                 ", type='" + type + '\'' +
                 ", cost=" + cost +
                 ", developers=" + developers +
+                ", date=" + date +
                 '}';
     }
 }

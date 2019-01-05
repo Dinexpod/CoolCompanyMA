@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class DeveloperDaoImpl extends AbstractDao implements DeveloperDao {
@@ -19,7 +18,7 @@ public class DeveloperDaoImpl extends AbstractDao implements DeveloperDao {
 
     @Override
     public void addDeveloper(Developer developer) {
-        final  String INSERT = "INSERT INTO developers(name, age,salary) VALUES(?,?,?)";
+        final String INSERT = "INSERT INTO developers(name, age,salary) VALUES(?,?,?)";
 
         try {
             PreparedStatement statement = connection.prepareStatement(INSERT);
@@ -78,7 +77,7 @@ public class DeveloperDaoImpl extends AbstractDao implements DeveloperDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//??????????????????????????????????????????????
+
         return null;
     }
 
@@ -135,6 +134,36 @@ public class DeveloperDaoImpl extends AbstractDao implements DeveloperDao {
         try {
             PreparedStatement statement = connection.prepareStatement(GET_ALL_DEVS_BY_NAME_SKILL);
             statement.setString(1, skill.getName().name());
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()) {
+                System.out.print((rs.getString("name")) + ", ");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void getAllDevelopersBySkillDegree(Skill skill) {
+        System.out.print("\n\n List developers: ");
+
+        final String GET_ALL_DEVS_BY_DEGREE_SKILL =
+                "SELECT name " +
+                        "FROM developers " +
+                        "where developer_id IN " +
+                        "      (select developers_skills.developer " +
+                        "       from developers_skills " +
+                        "       where developers_skills.skill IN " +
+                        "             (select skill_id " +
+                        "              from skills " +
+                        "              where skills.degree = ?) " +
+                        "      )" +
+                        ";";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(GET_ALL_DEVS_BY_DEGREE_SKILL);
+            statement.setString(1, skill.getDegree().name());
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()) {

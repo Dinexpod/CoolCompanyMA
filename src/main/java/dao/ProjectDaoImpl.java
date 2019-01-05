@@ -1,6 +1,5 @@
 package dao;
 
-import models.Developer;
 import models.Project;
 
 import java.sql.Connection;
@@ -13,13 +12,15 @@ import java.util.Collections;
 import java.util.List;
 
 public class ProjectDaoImpl extends AbstractDao implements ProjectDao {
+    int companyId = 1;
+
     public ProjectDaoImpl(Connection connection) {
         super(connection);
     }
 
     @Override
     public void addProject(Project project) {
-        final  String INSERT = "INSERT INTO projects(type, name, cost) VALUES(?,?,?)";
+        final String INSERT = "INSERT INTO projects(type, name, cost) VALUES(?,?,?)";
 
         try {
             PreparedStatement statement = connection.prepareStatement(INSERT);
@@ -88,7 +89,7 @@ public class ProjectDaoImpl extends AbstractDao implements ProjectDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//??????????????????????????????????????????????
+
         return null;
     }
 
@@ -126,6 +127,37 @@ public class ProjectDaoImpl extends AbstractDao implements ProjectDao {
     }
 
     @Override
+    public int showSomeDevs() {
+        int count = 0;
+        final String FIND_ALL = "SELECT name " +
+                "FROM developers " +
+                "where developer_id IN " +
+                "      (select developers_projects.developer " +
+                "       from developers_projects " +
+                "       where developers_projects.project IN " +
+                "             (select project_id " +
+                "             from projects " +
+                "             where project_id = ?) " +
+                "      )" +
+                ";";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(FIND_ALL);
+            statement.setLong(1, companyId);
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()) {
+                ++count;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        ++companyId;
+        return count;
+    }
+
+    @Override
     public Double getAllSalaryFromProject(Project project) {
         Double sumSalary = null;
         System.out.print("\nAll salary: ");
@@ -147,12 +179,14 @@ public class ProjectDaoImpl extends AbstractDao implements ProjectDao {
             PreparedStatement statement = connection.prepareStatement(GET_SUM_FROM_PROJECT);
             statement.setLong(1, project.getId());
             ResultSet rs = statement.executeQuery();
-            if(rs.next()) {
+
+            if (rs.next()) {
                 sumSalary = rs.getDouble("sumSalary");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return sumSalary;
     }
 
