@@ -18,8 +18,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void updateCustomerById(Long id) {
-        this.customerDao.updateCustomerById(id);
+    public void updateCustomerById(Customer customer) {
+        this.customerDao.updateCustomerById(customer);
     }
 
     @Override

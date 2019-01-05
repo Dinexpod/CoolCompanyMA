@@ -16,7 +16,7 @@ public class CustomerDaoImpl extends AbstractDao implements CustomerDao {
     }
 
     @Override
-    public void updateCustomerById(Long id) {
+    public void updateCustomerById(Customer customer) {
 
     }
 

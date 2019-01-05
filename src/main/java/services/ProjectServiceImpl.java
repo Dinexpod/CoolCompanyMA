@@ -18,8 +18,8 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public void updateProjectById(Long id) {
-        this.projectDao.updateProjectById(id);
+    public void updateProjectById(Project project) {
+        this.projectDao.updateProjectById(project);
     }
 
     @Override

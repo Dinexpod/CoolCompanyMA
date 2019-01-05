@@ -16,7 +16,7 @@ public class CompanyDaoImpl extends AbstractDao implements CompanyDao {
     }
 
     @Override
-    public void updateCompanyById(Long id) {
+    public void updateCompanyById(Company company) {
 
     }
 

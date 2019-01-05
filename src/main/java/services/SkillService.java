@@ -7,7 +7,7 @@ import java.util.Set;
 public interface SkillService {
     void addSkill(Skill skill);
 
-    void updateSkillById(Long id);
+    void updateSkillById(Skill skill);
 
     void deleteSkillById(Long id);
 

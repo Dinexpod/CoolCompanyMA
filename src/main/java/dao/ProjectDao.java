@@ -7,7 +7,7 @@ import java.util.Set;
 public interface ProjectDao {
     void addProject(Project project);
 
-    void updateProjectById(Long id);
+    void updateProjectById(Project project);
 
     void deleteProjectById(Long id);
 

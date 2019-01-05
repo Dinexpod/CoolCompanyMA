@@ -18,8 +18,8 @@ public class DeveloperServiceImpl implements DeveloperService {
     }
 
     @Override
-    public void updateDeveloperById(Long id) {
-        this.developerDao.updateDeveloperById(id);
+    public void updateDeveloperById(Developer developer) {
+        this.developerDao.updateDeveloperById(developer);
     }
 
     @Override
