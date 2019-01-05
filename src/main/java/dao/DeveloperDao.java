@@ -1,6 +1,8 @@
 package dao;
 
+import models.Company;
 import models.Developer;
+import models.Skill;
 
 import java.util.List;
 
@@ -14,4 +16,6 @@ public interface DeveloperDao {
     Developer getDeveloperById(Long id);
 
     List<Developer> showAllDevelopers();
+
+    void getAllDevelopersBySkillName(Skill skill);
 }

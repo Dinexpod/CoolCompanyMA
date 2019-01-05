@@ -1,5 +1,6 @@
 package services;
 
+import models.Developer;
 import models.Project;
 
 import java.util.List;
@@ -15,4 +16,8 @@ public interface ProjectService {
     Project getProjectById(Long id);
 
     List<Project> showAllProjects();
+
+    Double getAllSalaryFromProject(Project project);
+
+    void getAllDevelopersFromProject(Project project);
 }

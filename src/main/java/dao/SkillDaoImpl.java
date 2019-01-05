@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class SkillDaoImpl extends AbstractDao implements SkillDao {
     public SkillDaoImpl(Connection connection) {

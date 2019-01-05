@@ -1,6 +1,7 @@
 package services;
 
 import dao.ProjectDao;
+import models.Developer;
 import models.Project;
 
 import java.util.List;
@@ -36,5 +37,15 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public List<Project> showAllProjects() {
         return this.projectDao.showAllProjects();
+    }
+
+    @Override
+    public Double getAllSalaryFromProject(Project project) {
+        return this.projectDao.getAllSalaryFromProject(project);
+    }
+
+    @Override
+    public void getAllDevelopersFromProject(Project project) {
+        this.projectDao.getAllDevelopersFromProject(project);
     }
 }
