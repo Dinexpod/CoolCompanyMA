@@ -4,7 +4,6 @@ import dao.CompanyDao;
 import models.Company;
 
 import java.util.List;
-import java.util.Set;
 
 public class CompanyServiceImpl implements CompanyService {
     private final CompanyDao companyDao;

@@ -17,7 +17,7 @@ public class CompanyDaoImpl extends AbstractDao implements CompanyDao {
 
     @Override
     public void addCompany(Company company) {
-        final  String INSERT = "INSERT INTO companies(name, type) VALUES(?,?)";
+        final String INSERT = "INSERT INTO companies(name, type) VALUES(?,?)";
 
         try {
             PreparedStatement statement = connection.prepareStatement(INSERT);
@@ -74,7 +74,7 @@ public class CompanyDaoImpl extends AbstractDao implements CompanyDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//??????????????????????????????????????????????
+
         return null;
     }
 
@@ -82,7 +82,6 @@ public class CompanyDaoImpl extends AbstractDao implements CompanyDao {
         Company company = new Company();
         company.setId(rs.getLong("company_id"));
         company.setName(rs.getString("name"));
-        //        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         Company.Type.valueOf(rs.getString("type"));
 
         return company;

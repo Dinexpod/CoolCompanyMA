@@ -4,7 +4,6 @@ import dao.SkillDao;
 import models.Skill;
 
 import java.util.List;
-import java.util.Set;
 
 public class SkillServiceImpl implements SkillService {
     private final SkillDao skillDao;

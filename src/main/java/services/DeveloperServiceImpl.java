@@ -42,4 +42,9 @@ public class DeveloperServiceImpl implements DeveloperService {
     public void getAllDevelopersBySkillName(Skill skill) {
         this.developerDao.getAllDevelopersBySkillName(skill);
     }
+
+    @Override
+    public void getAllDevelopersBySkillDegree(Skill skill) {
+        this.developerDao.getAllDevelopersBySkillDegree(skill);
+    }
 }

@@ -4,7 +4,6 @@ import dao.CustomerDao;
 import models.Customer;
 
 import java.util.List;
-import java.util.Set;
 
 public class CustomerServiceImpl implements CustomerService {
     private final CustomerDao customerDao;

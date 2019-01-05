@@ -3,7 +3,6 @@ package dao;
 import models.Customer;
 
 import java.util.List;
-import java.util.Set;
 
 public interface CustomerDao {
     void addCustomer(Customer customer);

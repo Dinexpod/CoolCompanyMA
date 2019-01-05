@@ -17,7 +17,7 @@ public class SkillDaoImpl extends AbstractDao implements SkillDao {
 
     @Override
     public void addSkill(Skill skill) {
-        final  String INSERT = "INSERT INTO skills(degree, name) VALUES(?,?)";
+        final String INSERT = "INSERT INTO skills(degree, name) VALUES(?,?)";
 
         try {
             PreparedStatement statement = connection.prepareStatement(INSERT);
@@ -70,18 +70,18 @@ public class SkillDaoImpl extends AbstractDao implements SkillDao {
         try {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(SELECT);
+
             return rs.next() ? getSkill(rs) : null;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//??????????????????????????????????????????????
+
         return null;
     }
 
     private Skill getSkill(ResultSet rs) throws SQLException {
         Skill skill = new Skill();
         skill.setId(rs.getLong("skill_id"));
-//        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         Skill.Degree.valueOf(rs.getString("degree"));
         Skill.Name.valueOf(rs.getString("name"));
 

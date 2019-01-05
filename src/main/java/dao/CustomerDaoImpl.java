@@ -17,7 +17,7 @@ public class CustomerDaoImpl extends AbstractDao implements CustomerDao {
 
     @Override
     public void addCustomer(Customer customer) {
-        final  String INSERT = "INSERT INTO customers(name, age) VALUES(?,?)";
+        final String INSERT = "INSERT INTO customers(name, age) VALUES(?,?)";
 
         try {
             PreparedStatement statement = connection.prepareStatement(INSERT);
@@ -74,7 +74,7 @@ public class CustomerDaoImpl extends AbstractDao implements CustomerDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//??????????????????????????????????????????????
+
         return null;
     }
 
