@@ -2,6 +2,7 @@ package services;
 
 import dao.DeveloperDao;
 import models.Developer;
+import models.Skill;
 
 import java.util.List;
 
@@ -35,5 +36,10 @@ public class DeveloperServiceImpl implements DeveloperService {
     @Override
     public List<Developer> showAllDevelopers() {
         return this.developerDao.showAllDevelopers();
+    }
+
+    @Override
+    public void getAllDevelopersBySkillName(Skill skill) {
+        this.developerDao.getAllDevelopersBySkillName(skill);
     }
 }

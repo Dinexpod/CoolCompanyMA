@@ -1,6 +1,7 @@
 package dao;
 
 import models.Developer;
+import models.Skill;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DeveloperDaoImpl extends AbstractDao implements DeveloperDao {
@@ -111,5 +113,35 @@ public class DeveloperDaoImpl extends AbstractDao implements DeveloperDao {
         }
 
         return developers;
+    }
+
+    @Override
+    public void getAllDevelopersBySkillName(Skill skill) {
+        System.out.print("\n\n List developers: ");
+
+        final String GET_ALL_DEVS_BY_NAME_SKILL =
+                "SELECT name " +
+                        "FROM developers " +
+                        "where developer_id IN " +
+                        "      (select developers_skills.developer " +
+                        "       from developers_skills " +
+                        "       where developers_skills.skill IN " +
+                        "             (select skill_id " +
+                        "              from skills " +
+                        "              where skills.name = ?) " +
+                        "      )" +
+                        ";";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(GET_ALL_DEVS_BY_NAME_SKILL);
+            statement.setString(1, skill.getName().name());
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()) {
+                System.out.print((rs.getString("name")) + ", ");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,5 +1,6 @@
 package dao;
 
+import models.Developer;
 import models.Project;
 
 import java.sql.Connection;
@@ -8,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ProjectDaoImpl extends AbstractDao implements ProjectDao {
@@ -121,5 +123,66 @@ public class ProjectDaoImpl extends AbstractDao implements ProjectDao {
         }
 
         return projects;
+    }
+
+    @Override
+    public Double getAllSalaryFromProject(Project project) {
+        Double sumSalary = null;
+        System.out.print("\nAll salary: ");
+
+        final String GET_SUM_FROM_PROJECT =
+                "SELECT sum(salary) AS sumSalary " +
+                        "FROM developers " +
+                        "where developer_id IN " +
+                        "      (select developers_projects.developer " +
+                        "       from developers_projects " +
+                        "       where developers_projects.project IN " +
+                        "             (select project_id " +
+                        "             from projects" +
+                        "             where project_id = ?) " +
+                        "      )" +
+                        ";";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(GET_SUM_FROM_PROJECT);
+            statement.setLong(1, project.getId());
+            ResultSet rs = statement.executeQuery();
+            if(rs.next()) {
+                sumSalary = rs.getDouble("sumSalary");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sumSalary;
+    }
+
+    @Override
+    public void getAllDevelopersFromProject(Project project) {
+        System.out.print("\n\n List users: ");
+
+        final String GET_ALL_DEVS_FROM_PROJECT =
+                "SELECT developers.name " +
+                        "FROM developers " +
+                        "where developer_id IN " +
+                        "      (select developers_projects.developer " +
+                        "       from developers_projects " +
+                        "       where developers_projects.project IN " +
+                        "             (select project_id " +
+                        "             from projects " +
+                        "             where project_id = ?) " +
+                        "      )" +
+                        ";";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(GET_ALL_DEVS_FROM_PROJECT);
+            statement.setLong(1, project.getId());
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()) {
+                System.out.print(Collections.singletonList((rs.getString("name"))) + " ");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
