@@ -3,7 +3,7 @@ package services;
 import dao.DeveloperDao;
 import models.Developer;
 
-import java.util.Set;
+import java.util.List;
 
 public class DeveloperServiceImpl implements DeveloperService {
     private final DeveloperDao developerDao;
@@ -33,7 +33,7 @@ public class DeveloperServiceImpl implements DeveloperService {
     }
 
     @Override
-    public Set<Developer> showAllDevelopers() {
+    public List<Developer> showAllDevelopers() {
         return this.developerDao.showAllDevelopers();
     }
 }

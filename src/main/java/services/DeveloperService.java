@@ -2,7 +2,7 @@ package services;
 
 import models.Developer;
 
-import java.util.Set;
+import java.util.List;
 
 public interface DeveloperService {
     void addDeveloper(Developer developer);
@@ -13,5 +13,5 @@ public interface DeveloperService {
 
     Developer getDeveloperById(Long id);
 
-    Set<Developer> showAllDevelopers();
+    List<Developer> showAllDevelopers();
 }
