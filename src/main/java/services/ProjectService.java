@@ -2,6 +2,7 @@ package services;
 
 import models.Project;
 
+import java.util.List;
 import java.util.Set;
 
 public interface ProjectService {
@@ -13,5 +14,5 @@ public interface ProjectService {
 
     Project getProjectById(Long id);
 
-    Set<Project> showAllProjects();
+    List<Project> showAllProjects();
 }

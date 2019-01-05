@@ -2,6 +2,7 @@ package services;
 
 import models.Customer;
 
+import java.util.List;
 import java.util.Set;
 
 public interface CustomerService {
@@ -13,5 +14,5 @@ public interface CustomerService {
 
     Customer getCustomerById(Long id);
 
-    Set<Customer> showAllCustomer();
+    List<Customer> showAllCustomer();
 }

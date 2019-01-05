@@ -3,6 +3,7 @@ package services;
 import dao.SkillDao;
 import models.Skill;
 
+import java.util.List;
 import java.util.Set;
 
 public class SkillServiceImpl implements SkillService {
@@ -33,7 +34,7 @@ public class SkillServiceImpl implements SkillService {
     }
 
     @Override
-    public Set<Skill> showAllSkills() {
+    public List<Skill> showAllSkills() {
         return this.skillDao.showAllSkills();
     }
 }

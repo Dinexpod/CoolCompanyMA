@@ -2,6 +2,7 @@ package dao;
 
 import models.Customer;
 
+import java.util.List;
 import java.util.Set;
 
 public interface CustomerDao {
@@ -13,5 +14,5 @@ public interface CustomerDao {
 
     Customer getCustomerById(Long id);
 
-    Set<Customer> showAllCustomer();
+    List<Customer> showAllCustomer();
 }
