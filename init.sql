@@ -122,3 +122,12 @@ CREATE TABLE `coolcompany`.`customers_projects` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
+ALTER TABLE `coolcompany`.`skills`
+CHANGE COLUMN `field` `name` VARCHAR(255) NOT NULL ;
+
+ALTER TABLE `coolcompany`.`skills`
+DROP COLUMN `name`;
+
+ALTER TABLE `coolcompany`.`skills`
+ADD COLUMN `name` VARCHAR(255) NOT NULL AFTER `degree`;
