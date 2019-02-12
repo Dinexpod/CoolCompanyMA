@@ -78,11 +78,8 @@ public class CompanyDaoImpl extends AbstractDao implements CompanyDao {
         return null;
     }
 
-<<<<<<< HEAD
-    public Company getCompany(ResultSet rs) throws SQLException {
-=======
+
     private Company getCompany(ResultSet rs) throws SQLException {
->>>>>>> origin/master
         Company company = new Company();
         company.setId(rs.getLong("company_id"));
         company.setName(rs.getString("name"));
