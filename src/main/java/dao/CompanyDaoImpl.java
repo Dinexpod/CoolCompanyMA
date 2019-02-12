@@ -78,7 +78,7 @@ public class CompanyDaoImpl extends AbstractDao implements CompanyDao {
         return null;
     }
 
-    private Company getCompany(ResultSet rs) throws SQLException {
+    public Company getCompany(ResultSet rs) throws SQLException {
         Company company = new Company();
         company.setId(rs.getLong("company_id"));
         company.setName(rs.getString("name"));

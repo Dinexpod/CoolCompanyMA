@@ -51,28 +51,28 @@ public class Main {
 //        Skill skill = new Skill(Skill.Name.JAVA, Skill.Degree.SENIOR);
 //        skillS.addSkill(skill);
 
-//        Create javaMiddleSkill
-        Skill javaMiddleSkill = new Skill(Skill.Name.JAVA, Skill.Degree.MIDDLE);
-
-//        Create getting project by "id"
-        Project project1 = projectS.getProjectById((long) 2);
-
-//        get all salaries from "project1"
-        System.out.println(projectS.getAllSalaryFromProject(project1).toString());
-
-//        get all developers from "project1"
-        projectS.getAllDevelopersFromProject(project1);
-
-//        get all developers by skill name
-        developerS.getAllDevelopersBySkillName(javaMiddleSkill);
-
-//        get all developers by skill degree
-        developerS.getAllDevelopersBySkillDegree(javaMiddleSkill);
-
-//        get all project1
-        projectS.showAllProjects().forEach(p ->
-                System.out.println("date: " + p.toStringDate() + ";"
-                        + " name: " + p.getName() + ";"
-                        + " developers: " + projectS.showSomeDevs()));
+////        Create javaMiddleSkill
+//        Skill javaMiddleSkill = new Skill(Skill.Name.JAVA, Skill.Degree.MIDDLE);
+//
+////        Create getting project by "id"
+//        Project project1 = projectS.getProjectById((long) 2);
+//
+////        get all salaries from "project1"
+//        System.out.println(projectS.getAllSalaryFromProject(project1).toString());
+//
+////        get all developers from "project1"
+//        projectS.getAllDevelopersFromProject(project1);
+//
+////        get all developers by skill name
+//        developerS.getAllDevelopersBySkillName(javaMiddleSkill);
+//
+////        get all developers by skill degree
+//        developerS.getAllDevelopersBySkillDegree(javaMiddleSkill);
+//
+////        get all project1
+//        projectS.showAllProjects().forEach(p ->
+//                System.out.println("date: " + p.toStringDate() + ";"
+//                        + " name: " + p.getName() + ";"
+//                        + " developers: " + projectS.showSomeDevs()));
     }
 }
