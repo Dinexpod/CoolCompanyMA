@@ -116,4 +116,20 @@ public class UserDaoImpl extends AbstractDao implements UserDao {
 
         return users;
     }
+
+    @Override
+    public User getByUsername(String login) {
+        final String SELECT = "SELECT * FROM users WHERE login = " + login + "";
+
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(SELECT);
+
+            return rs.next() ? getUser(rs) : null;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 }
