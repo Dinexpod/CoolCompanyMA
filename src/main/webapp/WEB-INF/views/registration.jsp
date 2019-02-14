@@ -27,7 +27,7 @@
         <input name="email" type="text" placeholder="Email">
 
         <span class="fontawesome-user"></span>
-        <input name="username" type="text" placeholder="Username">
+        <input name="name" type="text" placeholder="Username">
 
         <span class="fontawesome-user"></span>
         <input name="name" type="text" placeholder="Name">
