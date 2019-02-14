@@ -1,7 +1,9 @@
 package web;
 
 import controllers.Controller;
+import controllers.HomeController;
 import controllers.LoginController;
+import controllers.RegistrationController;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +21,8 @@ public class MainServlet extends HttpServlet {
 
     static {
         controllers.put(Request.of("/servlet/login", GET), new LoginController());
-//        controllers.put("/servlet/login", new LoginController());
-//        controllers.put("/servlet/home", new LoginController());//////////////////
+        controllers.put(Request.of("/servlet/", GET), new HomeController());
+        controllers.put(Request.of("/servlet/registration", GET), new RegistrationController());
     }
 
     @Override
