@@ -14,4 +14,6 @@ public interface UserDao {
     User getUserById(Long id);
 
     List<User> showAllUsers();
+
+    User getByUsername(String login);
 }
