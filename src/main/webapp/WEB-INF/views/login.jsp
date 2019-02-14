@@ -24,7 +24,7 @@
           action="${pageContext.request.contextPath}/login">
 
         <span class="fontawesome-user"></span>
-        <input name="username" type="text" class="form-control" placeholder="Username"/>
+        <input name="name" type="text" class="form-control" placeholder="Username"/>
 
         <span class="fontawesome-lock"></span>
         <input name="password" type="password" class="form-control" placeholder="Password"/>
