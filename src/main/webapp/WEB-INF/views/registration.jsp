@@ -21,19 +21,16 @@
     <h1>REGISTRATION PAGE</h1>
 
     <form method="POST"
-          action="${pageContext.request.contextPath}/registration" modelattribute="userRegistrationInput">
+          action="${pageContext.request.contextPath}/servlet/registration" modelattribute="userRegistrationInput">
 
         <span class="fontawesome-user"></span>
         <input name="email" type="text" placeholder="Email">
 
         <span class="fontawesome-user"></span>
-        <input name="name" type="text" placeholder="Username">
+        <input name="login" type="text" placeholder="login">
 
         <span class="fontawesome-user"></span>
         <input name="name" type="text" placeholder="Name">
-
-        <span class="fontawesome-user"></span>
-        <input name="lastName" type="text" placeholder="Last name">
 
         <span class="fontawesome-lock"></span>
         <input name="password" type="password" placeholder="Password">
@@ -43,9 +40,9 @@
         <input type="submit" value="Authorization">
     </form>
 
-    <a href="${pageContext.request.contextPath}/login">
+    <a href="${pageContext.request.contextPath}/servlet/login">
         <form method="GET"
-              action="${pageContext.request.contextPath}/login">
+              action="${pageContext.request.contextPath}/servlet/login">
             <input type="submit" value=" Go to login ">
         </form>
     </a>

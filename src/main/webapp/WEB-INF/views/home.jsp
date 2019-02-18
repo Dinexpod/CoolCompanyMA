@@ -21,9 +21,9 @@
 
     <body>
 
-    <a href="${pageContext.request.contextPath}/login">
+    <a href="${pageContext.request.contextPath}/servlet/login">
         <form method="GET"
-              action="${pageContext.request.contextPath}/login">
+              action="${pageContext.request.contextPath}/servlet/login">
             <input type="submit" value=" Login ">
         </form>
     </a>
