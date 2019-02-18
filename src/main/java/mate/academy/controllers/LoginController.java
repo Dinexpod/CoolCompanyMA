@@ -6,6 +6,7 @@ import mate.academy.web.Request;
 import mate.academy.web.ViewModel;
 
 public class LoginController implements Controller {
+
     private SecurityService securityService;
 
     public LoginController(SecurityService securityService) {
