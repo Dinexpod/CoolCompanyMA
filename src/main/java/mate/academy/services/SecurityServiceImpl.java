@@ -14,7 +14,7 @@ public class SecurityServiceImpl implements SecurityService {
     }
 
     @Override
-    public ViewModel doLog(String login, String password) {
+    public ViewModel doLogin(String login, String password) {
 
         User user = userService.getByUsername(login);
 

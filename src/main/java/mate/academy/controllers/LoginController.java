@@ -17,6 +17,6 @@ public class LoginController implements Controller {
         String login = request.getParamByName("login");
         String actualPass = PassEncoder.encode(request.getParamByName("password"));
 
-        return securityService.doLog(login, actualPass);
+        return securityService.doLogin(login, actualPass);
     }
 }

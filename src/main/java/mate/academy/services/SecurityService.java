@@ -5,7 +5,7 @@ import mate.academy.web.ViewModel;
 
 public interface SecurityService {
 
-    ViewModel doLog(String login, String password);
+    ViewModel doLogin(String login, String password);
 
     boolean doReg(User user);
 }
