@@ -26,7 +26,7 @@ public class UserFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) {
         userDao = Factory.getUserDao();
-        protectedUrls.put("servlet/home", "ADMIN");
+        protectedUrls.put("servlet/admin", "ADMIN");
     }
 
     @Override
@@ -53,16 +53,13 @@ public class UserFilter implements Filter {
 
         if (token == null) {
             if (path.equals("/servlet/login")
-                    || path.equals("/servlet/registration")
-                    || path.equals("/servlet/404")
-                    || path.equals("/servlet/403")) {
+                    || path.equals("/servlet/registration")) {
                 processAuth(req, resp, filterChain);
             } else {
                 prosessUnauth(req, resp);
             }
         } else {
             User u = userDao.findByToken(token);
-            u.addRole("ADMIN"); ///////////////////////////////////////////////
 
             if (u == null) {
                 prosessUnauth(req, resp);
@@ -81,7 +78,7 @@ public class UserFilter implements Filter {
     }
 
     private void processDenied(ServletRequest servletRequest,
-                               ServletResponse servletResponse) throws ServletException, IOException {
+                                ServletResponse servletResponse) throws ServletException, IOException {
         servletRequest.getRequestDispatcher("/WEB-INF/views/403.jsp").forward(servletRequest, servletResponse);
 
     }
