@@ -20,6 +20,7 @@ public class MainServlet extends HttpServlet {
         controllers.put(Request.of("/servlet/home", GET), r -> ViewModel.of("home"));
         controllers.put(Request.of("/servlet/403", GET), r -> ViewModel.of("403"));
         controllers.put(Request.of("/servlet/404", GET), r -> ViewModel.of("404"));
+        controllers.put(Request.of("/servlet/admin", GET), r -> ViewModel.of("admin"));
 
         controllers.put(Request.of("/servlet/logout", Request.RequestMethod.GET), r -> ViewModel.of("logout"));
         controllers.put(Request.of("/servlet/logout", Request.RequestMethod.POST), Factory.getLogoutController());
@@ -50,7 +51,7 @@ public class MainServlet extends HttpServlet {
                 valueOf(req.getMethod()), parameterMap);
 
         Controller controller = controllers.getOrDefault(r,
-                reqNotExist -> ViewModel.of("404)"));
+                reqNotExist -> ViewModel.of("404"));
 
         ViewModel vm = controller.process(r);
 
