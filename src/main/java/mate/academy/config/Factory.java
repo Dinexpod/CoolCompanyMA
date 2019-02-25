@@ -4,8 +4,12 @@ import mate.academy.ConnectionUtil;
 import mate.academy.controllers.LoginController;
 import mate.academy.controllers.LogoutController;
 import mate.academy.controllers.RegistrationController;
+import mate.academy.dao.RoleDao;
+import mate.academy.dao.RoleDaoImpl;
 import mate.academy.dao.UserDao;
 import mate.academy.dao.UserDaoImpl;
+import mate.academy.services.RoleService;
+import mate.academy.services.RoleServiceImpl;
 import mate.academy.services.SecurityService;
 import mate.academy.services.SecurityServiceImpl;
 import mate.academy.services.UserService;
@@ -46,5 +50,13 @@ public class Factory {
 
     public static UserDao getUserDao() {
         return new UserDaoImpl(CONNECTION);
+    }
+
+    public static RoleService getRoleService() {
+        return new RoleServiceImpl(getRoleDao());
+    }
+
+    private static RoleDao getRoleDao() {
+        return new RoleDaoImpl(CONNECTION);
     }
 }

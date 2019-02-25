@@ -24,6 +24,11 @@ public class MainServlet extends HttpServlet {
         controllers.put(Request.of("/servlet/registration", POST), Factory.getRegistrationController());
         controllers.put(Request.of("/servlet/registration", GET), r -> ViewModel.of("registration"));
         controllers.put(Request.of("/servlet/home", GET), r -> ViewModel.of("home"));
+        controllers.put(Request.of("/servlet/403", GET), r -> ViewModel.of("403"));
+        controllers.put(Request.of("/servlet/404", GET), r -> ViewModel.of("404"));
+
+        controllers.put(Request.of("/servlet/logout", Request.RequestMethod.GET), r -> ViewModel.of("logout"));
+        controllers.put(Request.of("/servlet/logout", Request.RequestMethod.POST), Factory.getLogoutController());
     }
 
     @Override
@@ -51,8 +56,12 @@ public class MainServlet extends HttpServlet {
             throws ServletException, IOException {
         String path = req.getServletPath() + req.getPathInfo();
         Map<String, String[]> parameterMap = req.getParameterMap();
-        Request r = Request.of(path, Request.RequestMethod.valueOf(req.getMethod()), parameterMap);
-        Controller controller = controllers.get(r);
+        Request r = Request.of(path, Request.RequestMethod.
+                valueOf(req.getMethod()), parameterMap);
+
+        Controller controller = controllers.getOrDefault(r,
+                reqNotExist -> ViewModel.of("404)"));
+
         ViewModel vm = controller.process(r);
 
         if (!vm.getAllCookie().isEmpty()) {
