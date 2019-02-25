@@ -13,12 +13,8 @@
 
     <title>home</title>
 </head>
-<%@include file="header1.jsp"%>
 
 <div id="login">
-
-    <form method="POST" action="${pageContext.request.contextPath}/servlet/logout" class="form">
-        <button type="submit">Logout</button>
 
     <h1> Welcome!!! </h1>
     <h1> You are located on main page WebSite! </h1>
@@ -40,8 +36,6 @@
     </a>
 
     </body>
-
-</form>
 
 </div>
 

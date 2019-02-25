@@ -4,7 +4,6 @@ import mate.academy.dao.CompanyDaoImpl;
 import mate.academy.dao.CustomerDaoImpl;
 import mate.academy.dao.DeveloperDaoImpl;
 import mate.academy.dao.ProjectDaoImpl;
-import mate.academy.dao.RoleDaoImpl;
 import mate.academy.dao.SkillDaoImpl;
 import mate.academy.services.CompanyService;
 import mate.academy.services.CompanyServiceImpl;
@@ -14,8 +13,6 @@ import mate.academy.services.DeveloperService;
 import mate.academy.services.DeveloperServiceImpl;
 import mate.academy.services.ProjectService;
 import mate.academy.services.ProjectServiceImpl;
-import mate.academy.services.RoleService;
-import mate.academy.services.RoleServiceImpl;
 import mate.academy.services.SkillService;
 import mate.academy.services.SkillServiceImpl;
 
@@ -30,7 +27,6 @@ public class Main {
         DeveloperService developerS = new DeveloperServiceImpl(new DeveloperDaoImpl(connection));
         ProjectService projectS = new ProjectServiceImpl(new ProjectDaoImpl(connection));
         SkillService skillS = new SkillServiceImpl(new SkillDaoImpl(connection));
-        RoleService roleS = new RoleServiceImpl(new RoleDaoImpl(connection));
 
 //        Create and add company
 //        Company company = new Company("EPAM1", Company.Type.INSOURCE);

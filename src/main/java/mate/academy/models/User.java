@@ -1,7 +1,5 @@
 package mate.academy.models;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class User {
@@ -11,7 +9,6 @@ public class User {
     private String password;
     private String email;
     private String token;
-    private List<Role> roles = new ArrayList<>();
 
     public User() {
     }
@@ -65,18 +62,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void addRole(String role) {
-        roles.add(new Role(role));
-    }
-
-    public List<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRole(List<Role> roles) {
-        this.roles = roles;
     }
 
     @Override
