@@ -13,42 +13,31 @@
 
     <title>registration</title>
 </head>
+<%@include file="header1.jsp"%>
 
 <div id="login">
 
     <body>
-
     <h1>REGISTRATION PAGE</h1>
-
     <form method="POST"
           action="${pageContext.request.contextPath}/servlet/registration" modelattribute="userRegistrationInput">
-
         <span class="fontawesome-user"></span>
         <input name="email" type="text" placeholder="Email">
-
         <span class="fontawesome-user"></span>
         <input name="login" type="text" placeholder="login">
-
         <span class="fontawesome-user"></span>
         <input name="name" type="text" placeholder="Name">
-
         <span class="fontawesome-lock"></span>
         <input name="password" type="password" placeholder="Password">
-
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
         <input type="submit" value="Authorization">
     </form>
-
     <a href="${pageContext.request.contextPath}/servlet/login">
         <form method="GET"
               action="${pageContext.request.contextPath}/servlet/login">
             <input type="submit" value=" Go to login ">
         </form>
     </a>
-
     </body>
-
 </div>
-
 </html>
