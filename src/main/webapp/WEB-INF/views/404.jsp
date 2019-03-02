@@ -10,11 +10,12 @@
 <head>
     <title>Not found</title>
 </head>
+
 <%@include file="header1.jsp"%>
 
 <body>
 
-
 <h1>404</h1>
+
 </body>
 </html>

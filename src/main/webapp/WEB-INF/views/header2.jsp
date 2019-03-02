@@ -10,11 +10,12 @@
 <head>
     <title>header2</title>
 </head>
+
 <%@include file="header1.jsp"%>
 
 <body>
 
-
 <h1>HEADER 2</h1>
+
 </body>
 </html>
