@@ -78,7 +78,7 @@ public class UserFilter implements Filter {
     }
 
     private void processDenied(ServletRequest servletRequest,
-                                ServletResponse servletResponse) throws ServletException, IOException {
+                               ServletResponse servletResponse) throws ServletException, IOException {
         servletRequest.getRequestDispatcher("/WEB-INF/views/403.jsp").forward(servletRequest, servletResponse);
 
     }

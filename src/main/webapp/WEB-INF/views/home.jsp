@@ -13,6 +13,7 @@
 
     <title>home</title>
 </head>
+
 <%@include file="header1.jsp"%>
 
 <div id="login">
@@ -42,5 +43,4 @@
     </form>
 
 </div>
-
 </html>

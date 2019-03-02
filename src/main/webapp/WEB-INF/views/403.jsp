@@ -10,9 +10,12 @@
 <head>
     <title>Process denied</title>
 </head>
+
 <%@include file="header1.jsp"%>
 
 <body>
+
 <h1>Process denied</h1>
+
 </body>
 </html>

@@ -13,12 +13,15 @@
 
     <title>login</title>
 </head>
-<%@include file="header1.jsp"%>
+
+<%@include file="header1.jsp" %>
 
 <div id="login">
 
     <body>
+
     <h1>LOGIN PAGE</h1>
+
     <form method="POST"
           action="${pageContext.request.contextPath}/servlet/login">
         <span class="fontawesome-user"></span>
@@ -28,12 +31,14 @@
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <input type="submit" value="Login">
     </form>
+
     <a href="${pageContext.request.contextPath}/servlet/registration">
         <form method="GET"
               action="${pageContext.request.contextPath}/servlet/registration">
             <input type="submit" value=" Go to registration ">
         </form>
     </a>
+
     </body>
 </div>
 </html>

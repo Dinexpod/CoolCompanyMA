@@ -10,9 +10,12 @@
 <head>
     <title>admin</title>
 </head>
+
 <%@include file="header1.jsp"%>
 
 <body>
+
 <h1>ADMIN</h1>
+
 </body>
 </html>
