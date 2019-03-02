@@ -22,7 +22,7 @@ You can push button:
     "login" for login
 
 ## Prerequisites
-- JDK 11 or later
+- JDK 8 or later
 - Maven 4 or later
 
 ## Stack
